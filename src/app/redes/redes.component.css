@@ -1,0 +1,17 @@
+/*redes sociales*/
+i.fa-brands.fa-linkedin.fa-xl:hover{
+    color:#0059ff ;   
+   }
+   i.fa-brands.fa-instagram.fa-xl:hover{
+       color:#f09df3 ;   
+      }
+   i.fa-brands.fa-github.fa-xl:hover{
+       color:rgb(253, 251, 251) ;   
+      }
+   .list-group-item{
+   --bs-list-group-bg: transparent;
+   border: none;
+   }
+   a{
+       color: black;
+   }

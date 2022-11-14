@@ -1,0 +1,18 @@
+<!--seccion habilidades-->  
+<section id="habilidades" class="habilidades">
+    <div class="container-fluid text-center rounded shadow-sm p-3 bg-body-transparent">
+    <div class="col-8 mt-4">
+      <h2 class="text-center">Hard & soft skills</h2>
+      <!--iteracion sobre la variable de instancia y presentacion de datos meidante interpolacion-->
+      <div class="progress mt-4" *ngFor="let habilidad of habilidades">
+         <div class="progress-bar progress-bar-striped"  role="progressbar" aria-label="Default striped example" [style.width.%]="habilidad.porcentaje" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{habilidad.porcentaje}}% {{habilidad.habilidad}}
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-editar></app-editar>
+      <app-agregar></app-agregar>
+      <app-eliminar></app-eliminar>
+    </div>
+    </div>
+  </section>

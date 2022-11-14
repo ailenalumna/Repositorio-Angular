@@ -1,0 +1,16 @@
+/*seccion habilidades*/
+.habilidades{
+    margin: 1rem;
+    border-style: double;
+    border-color:rgb(172, 113, 167)
+ }
+ .btn.btn-close-blackhab{
+    margin-top: -20rem;
+    margin-right: -121rem;
+}
+.progress-bar{
+    background-color: #000;
+    background-image: none;
+    text-align: center;
+    --bs-progress-height: 1.5rem;
+}

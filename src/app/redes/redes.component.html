@@ -1,0 +1,10 @@
+ <!--Redes sociales-->
+ <ul class="list-group list-group-horizontal" *ngFor="let redes of redes">
+      <!-- Button trigger modal -->
+      <div [ngClass]="redes">
+   {{redes.id}} {{redes.icono}}
+</div>
+  </ul>
+  
+  <i class="fa-solid fa-user-lock fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+</i>

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/*banner*/
+body{
+    background-image: url(assets/img/acuarelas.jpg);
+    margin: 1rem; 
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&family=Combo&display=swap');
+*{
+    font-family: 'Aref Ruqaa Ink', serif;
+ 
+
+}

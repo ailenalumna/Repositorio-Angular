@@ -1,0 +1,10 @@
+/*seccion proyectos*/
+.proyectos{
+    margin: 1rem;
+    border-style:double;
+    border-color:rgb(172, 113, 167)
+}
+.btn.btn-close-black{
+    margin-right: -75rem;
+  
+}

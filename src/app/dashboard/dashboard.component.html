@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-secondary fixed top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="file:///C:/Users/ailen/Documents/Argentina%20Programa%202022YoProgramo/Portfolio-FrontEnd/index.maqueta.html">
+      <img src="assets/img/APLogo-20-20.png" alt="argpprod" width="20%" height="">
+    </a>   
+      <!--Redes sociales-->
+      <ul class="list-group list-group-horizontal">   
+        <!-- Button trigger modal -->
+        <li class="list-group-item">
+          <!--boton que envia al login-->
+        <a href="/login.html"><i class="fa-solid fa-user fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></a>
+    </li>
+    </ul>
+    </div>
+  </nav>
+<div class="row">
+  <div class="col-1">
+    <nav class="vertical" id="list-tab" role="tablist">
+      <ul>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action active" id="list-redes-list" data-bs-toggle="list" href="#list-redes" role="tab" aria-controls="list-redes">Redes</a>
+        </li>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action" id="list-banner-list" data-bs-toggle="list" href="#list-banner" role="tab" aria-controls="list-banner">Banner</a>
+        </li>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action" id="list-about-list" data-bs-toggle="list" href="#list-about" role="tab" aria-controls="list-about">About</a>
+        </li>
+        <li class="vertical" >
+          <a class="list-group-item list-group-item-action" id="list-work-list" data-bs-toggle="list" href="#list-work" role="tab" aria-controls="list-work">Work</a>
+        </li>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action" id="list-educación-list" data-bs-toggle="list" href="#list-educación" role="tab" aria-controls="list-educación">Educación</a>
+        </li>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action" id="list-skills-list" data-bs-toggle="list" href="#list-skills" role="tab" aria-controls="list-skills">Skills</a>
+        </li>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action" id="list-proyectos-list" data-bs-toggle="list" href="#list-proyectos" role="tab" aria-controls="list-proyectos">Proyectos</a>
+        </li>
+        <li class="vertical">
+          <a class="list-group-item list-group-item-action" id="list-contacto-list" data-bs-toggle="list" href="#list-contacto" role="tab" aria-controls="list-contacto">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-11 mt-2">
+    <div class="tab-content" id="nav-tabContent">
+      <app-redes-panel></app-redes-panel>
+      <app-banner-panel></app-banner-panel>
+      <app-about-panel></app-about-panel>
+      <app-work-panel></app-work-panel>
+      <app-educ-panel></app-educ-panel>
+      <app-skills-panel></app-skills-panel>
+      <app-proyec-panel></app-proyec-panel>
+      <div class="tab-pane fade" id="list-contacto" role="tabpanel" aria-labelledby="list-contacto-list">Contacto</div>
+    </div>
+  
+  </div>
+</div>
+
+
+

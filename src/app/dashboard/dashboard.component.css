@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&family=Combo&display=swap');
+body{
+    font-family: 'Aref Ruqaa Ink', serif;
+ 
+
+}
+/*panel nuevo*/
+nav.vertical{
+    float: left;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem ;
+
+}
+li.vertical{
+display: block;
+margin: 0;
+writing-mode: vertical;
+padding: 1.5rem 0 ;
+justify-content: center;
+display: flex;
+}
+/*barra de navegación*/
+.navbar.navbar-expand-lg.bg-secondary{
+    background-color: rgb(221, 190, 250) !important;
+
+}
+.list-group-item{
+    --bs-list-group-bg: transparent;
+    border: none;
+}
+a, a:hover{
+        color: black; 
+        display:inline-block;
+     text-decoration: none;
+}

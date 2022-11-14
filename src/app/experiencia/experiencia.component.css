@@ -1,0 +1,12 @@
+/*seccion experiencia*/
+.experiencia{
+    margin: 1rem;
+    margin-top: 1rem;
+    border-style: double;
+    border-color:rgb(172, 113, 167)
+}
+/*botones de edicion,eliminar,plus de exp*/
+.btn.btn-close-black{
+    margin-right: -75rem;
+  
+}
