@@ -6,13 +6,13 @@ import { PorfolioService } from '../servicios/porfolio.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-educacion: any = [];
+educaciones: any = [];
 
   constructor( private porfolioService: PorfolioService ) { }
 
   ngOnInit(): void {
     this.porfolioService.getDatos().subscribe(porfolio =>{
-      this.educacion=porfolio.educacion;
+      this.educaciones=porfolio.educaciones;
    });
   }
 

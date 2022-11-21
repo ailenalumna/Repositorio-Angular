@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
 /*seccion proyectos*/
 .proyectos{
     margin: 1rem;
@@ -8,3 +9,21 @@
     margin-right: -75rem;
   
 }
+.card, .card-body{
+    background: rgb(226, 164, 198);
+    border: 0.6rem solid transparent;
+    padding: 1rem;
+    border-radius: 1.3rem;
+   
+}
+.card-body, .card:hover{
+border: 0.2rem solid black;
+}
+/*iconos de html,angular*/
+.fa-brands.fa-html5{
+    font-size: 2rem;
+}
+.fa-brands.fa-angular{
+    font-size: 2rem;
+}
+

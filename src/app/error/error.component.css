@@ -1,0 +1,30 @@
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+    
+}
+.btn{
+    margin: 2rem;
+    background-color: rgb(211, 185, 185);
+    border: 0rem;
+    padding:0.5rem 2rem;
+    font-size:1.5rem;
+    
+    
+}
+h1{
+    margin: 5rem;
+   
+}
+h3{
+    margin: auto;
+   
+}
+.linea {
+    border-top: 0.06rem solid black;
+    height: 0.13rem;
+    max-width: 50rem;
+    padding: 0;
+    margin: 1.3rem auto 0 auto;
+  }
