@@ -27,6 +27,7 @@ import { WorkPanelComponent } from './dashboard/work-panel/work-panel.component'
 import { EducPanelComponent } from './dashboard/educ-panel/educ-panel.component';
 import { SkillsPanelComponent } from './dashboard/skills-panel/skills-panel.component';
 import { ProyecPanelComponent } from './dashboard/proyec-panel/proyec-panel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { ProyecPanelComponent } from './dashboard/proyec-panel/proyec-panel.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

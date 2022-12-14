@@ -12,17 +12,20 @@
 "redes":[
 {
    "id":0,
-   "icono": "fa-linkedin"
+   "icono": "fa-linkedin",  
+   "url": "https://www.linkedin.com/in/ail%C3%A9n-torres-516922250/"
 
 },
 {
    "id":1,
-   "icono": "fa-github"
+   "icono": "fa-github",
+   "url": "https://github.com/ailenalumna"
 
 },
 {
    "id":2,
-   "icono": "fa-instagram"
+   "icono": "fa-instagram",
+   "url": "https://www.instagram.com/aili.torres/"
 
 }
 
@@ -100,3 +103,4 @@
 
 
 }
+

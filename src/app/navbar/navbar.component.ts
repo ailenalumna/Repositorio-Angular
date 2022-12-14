@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PorfolioService } from '../servicios/porfolio.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 imagenLogoAP: string = '';
 imagenTitulo: string = '';
-  constructor() { }
+
+  constructor(private porfolioService: PorfolioService ) { }
 
   ngOnInit(): void {
+    
   }
 
 }

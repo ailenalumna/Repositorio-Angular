@@ -6,12 +6,15 @@ import { PorfolioService } from '../servicios/porfolio.service';
   styleUrls: ['./redes.component.css']
 })
 export class RedesComponent implements OnInit {
-
+ redes: any = [];
 
   constructor(private porfolioService: PorfolioService) { }
 
   ngOnInit(): void {
-    
+    this.porfolioService.getDatos().subscribe(porfolio =>{
+      //definir info a mostrar
+      this.redes=porfolio.redes;
+   });
   }
 
 }
