@@ -1,0 +1,45 @@
+<!-------- MODAL PROYECTOS -------->
+<div class="container text-center">
+    <div class="row">
+    <div class="col-4">
+        <button type="submit" class="btn btn-close-black"><i class="fa-solid fa-pen" data-bs-toggle="modal" data-bs-target="#editarproy"></i></button>
+    </div>
+        <div class="modal fade" id="editarproy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editarproy">Editar Proyectos</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                <div class="modal-body">
+                    <div class="container">
+                      <form [formGroup]="editarProyForm">
+                        <div class="form-group m-3">
+                            <label for="nombreproy">Nombre Proyecto</label>
+                            <input type="text" class="form-control text-center" id="nombreproy" name="nombreproy" formControlName="nombreproy">
+                        </div>
+                   <div *ngIf="nombreproy?.errors && nombreproy?.touched">
+                    <div *ngIf="nombreproy?.hasError('required')" class="alert alert-danger" role="alert">
+                      Debe ingresar el nombre del proyecto.
+                    </div>
+                  </div>
+                <div class="form-group m-3">
+                    <label for="logoproy">Logo Proyecto</label>
+                    <input type="file" class="form-control" id="logoproy" name="logoproy" formControlName="logoproy">
+               </div>
+            <div class="form-group m-3">
+          <label for="descripcionproy">Descripción Proyecto</label>
+          <textarea rows="5" type="text" class="form-control text-center" id="descripcion" name="descripcionproy" formControlName="descripcionproy"></textarea>
+           </div>
+           <div *ngIf="descripcionproy?.errors && descripcionproy?.touched">
+            <div *ngIf="descripcionproy?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe ingresar una breve descripción del proyecto.
+            </div>
+          </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  </div>
+             
+                
+

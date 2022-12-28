@@ -17,8 +17,6 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { IndexComponent } from './index/index.component';
-import { EditarComponent } from './modals/editar/editar.component';
-import { AgregarComponent } from './modals/agregar/agregar.component';
 import { EliminarComponent } from './modals/eliminar/eliminar.component';
 import { RedesPanelComponent } from './dashboard/redes-panel/redes-panel.component';
 import { BannerPanelComponent } from './dashboard/banner-panel/banner-panel.component';
@@ -28,6 +26,15 @@ import { EducPanelComponent } from './dashboard/educ-panel/educ-panel.component'
 import { SkillsPanelComponent } from './dashboard/skills-panel/skills-panel.component';
 import { ProyecPanelComponent } from './dashboard/proyec-panel/proyec-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditarAcercaDeMiComponent } from './modals/editar-acerca-de-mi/editar-acerca-de-mi.component';
+import { EditarExperienciaComponent } from './modals/editar-experiencia/editar-experiencia.component';
+import { EditarEducacionComponent } from './modals/editar-educacion/editar-educacion.component';
+import { EditarHabilidadesComponent } from './modals/editar-habilidades/editar-habilidades.component';
+import { EditarProyectosComponent } from './modals/editar-proyectos/editar-proyectos.component';
+import { AgregarEducacionComponent } from './modals/agregar-educacion/agregar-educacion.component';
+import { AgregarHabilidadesComponent } from './modals/agregar-habilidades/agregar-habilidades.component';
+import { AgregarProyectosComponent } from './modals/agregar-proyectos/agregar-proyectos.component';
+import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agregar-experiencia.component';
 
 
 @NgModule({
@@ -45,8 +52,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     ErrorComponent,
     IndexComponent,
-    EditarComponent,
-    AgregarComponent,
     EliminarComponent,
     RedesPanelComponent,
     BannerPanelComponent,
@@ -55,6 +60,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EducPanelComponent,
     SkillsPanelComponent,
     ProyecPanelComponent,
+    EditarAcercaDeMiComponent,
+    EditarExperienciaComponent,
+    EditarEducacionComponent,
+    EditarHabilidadesComponent,
+    EditarProyectosComponent,
+    AgregarEducacionComponent,
+    AgregarHabilidadesComponent,
+    AgregarProyectosComponent,
+    AgregarExperienciaComponent,
   ],
   imports: [
     BrowserModule,

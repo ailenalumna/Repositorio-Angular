@@ -1,0 +1,49 @@
+<div class="container text-center">
+    <div class="row">
+    <div class="col-4">
+    <button type="submit" class="btn btn-close-black"><i class="fa-solid fa-plus" data-bs-toggle="modal" data-bs-target="#agregarEduc"></i></button>
+    </div>
+    <div class="modal fade" id="agregarEduc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar Educación</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form [formGroup]="educacionForm"  #form="ngForm">
+            <div class="form-group m-3">
+                <label for="tituloCurso">Título del Curso</label>
+                <input type="text" class="form-control text center" name="tituloCurso" formControlName="tituloCurso">
+              </div>
+              <div *ngIf="tituloCurso?.errors && tituloCurso?.touched">
+                <div *ngIf="tituloCurso?.hasError('required')" class="alert alert-danger" role="alert">
+                  Debe ingresar el título del curso.
+                </div>
+              </div>
+              <div class="form-group m-3">
+                <label for="descripcionCurso">Descripción del Curso</label>
+                <textarea rows="5" type="text" class="form-control" name="descripcionCurso" formControlName="descripcionCurso"></textarea>
+              </div>
+              <div *ngIf="descripcionCurso?.errors && descripcionCurso?.touched">
+                <div *ngIf="descripcionCurso?.hasError('required')" class="alert alert-danger" role="alert">
+                  Debe ingresar la descripción de la cursada.
+                </div>
+              </div>
+                <div class="form-group m-3">
+                  <label for="imagenCurso">Certificado del Curso</label>
+                  <input type="file" class="form-control" name="imagenCurso" formControlName="imgCurso">
+                </div>
+                <div *ngIf="imagenCurso?.errors && imagenCurso?.touched">
+                  <div *ngIf="imagenCurso?.hasError('required')" class="alert alert-danger" role="alert">
+                    Debe ingresar la imagen de la Institución.
+                  </div>
+                </div>
+            <div class="modal-footer">
+              <button type="submit" [disabled]="imagenCurso?.hasError('required') || tituloCurso?.hasError('required') ||  descripcionCurso?.hasError('required')" class="btn btn-secondary" data-bs-dismiss="modal">Guardar</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        
+   
+    

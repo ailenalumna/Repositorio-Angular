@@ -34,14 +34,14 @@
     {
        "inicio": "Febrero 2022",
        "fin": "Abril 2022",
-       "nivel": "Sé Programar de Argentina Programa",
+       "tituloDelCurso": "Sé Programar de Argentina Programa",
        "img": "assets/img/certificado argentina progama Séprogramar.JPG"
     },
 
      {
         "inicio": "Agosto 2021",
         "fin": "Noviembre 2021",
-        "nivel": "Asistente Administrativo.Escuela de Oficios UNLP",
+        "tituloDelCurso": "Asistente Administrativo.Escuela de Oficios UNLP",
         "img": "assets/img/certificado-escuela de oficios.JPG"
      }
  ],
