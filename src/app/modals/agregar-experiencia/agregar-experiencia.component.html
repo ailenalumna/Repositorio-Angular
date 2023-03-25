@@ -1,24 +1,25 @@
 <div class="container text-center">
     <div class="row">
     <div class="col-4">
-    <button type="submit" class="btn btn-close-black"><i class="fa-solid fa-plus" data-bs-toggle="modal" data-bs-target="#agregarExp"></i></button>
+    <button type="submit" class="btn btn-close-black"><i class="fa-solid fa-plus" data-bs-toggle="modal" data-bs-target="#agregarExp"></i>
+    </button>
     </div>
     <div class="modal fade" id="agregarExp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Agregar Experiencia</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clean()"></button>
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form [formGroup]="expForm"  #form="ngForm">
+                    <form [formGroup]="expForm"  #form="ngForm" (ngSubmit)="onSend($event)">
             <div class="form-group m-3">
                 <label for="descripTrabajo">Descripción del trabajo</label>
-                <textarea rows="5" type="text" class="form-control text center" name="descripTrabajo" formControlName="descripTrabajo"></textarea>
+                <textarea rows="5" type="text" class="form-control text center" name="descripTrabajo" formControlName="descripTrabajo" [(ngModel)]="descripTrabajo"></textarea>
               </div>
-              <div *ngIf="descripTrabajo?.errors && descripTrabajo?.touched">
-                <div *ngIf="descripTrabajo?.hasError('required')" class="alert alert-danger" role="alert">
+              <div *ngIf="DescripTrabajo?.errors && DescripTrabajo?.touched">
+                <div *ngIf="DescripTrabajo?.hasError('required')" class="alert alert-danger" role="alert">
                   Debe ingresar la descripción del trabajo.
                 </div>
               </div>

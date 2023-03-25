@@ -32,16 +32,18 @@
 ],
 "educaciones": [ 
     {
+       "tituloCurso": "Sé Programar de Argentina Programa",
+       "descripcionCurso": "",
        "inicio": "Febrero 2022",
        "fin": "Abril 2022",
-       "tituloDelCurso": "Sé Programar de Argentina Programa",
        "img": "assets/img/certificado argentina progama Séprogramar.JPG"
     },
 
      {
+       "tituloCurso": "Asistente Administrativo.Escuela de Oficios UNLP",
+       "descripcionCurso": "",
         "inicio": "Agosto 2021",
         "fin": "Noviembre 2021",
-        "tituloDelCurso": "Asistente Administrativo.Escuela de Oficios UNLP",
         "img": "assets/img/certificado-escuela de oficios.JPG"
      }
  ],
@@ -77,7 +79,7 @@
 "proyectos": [
    {
       "id": 0,
-      "logoProyecto": "",
+      "logoProyecto": "fa-brands fa-html5",
       "titulo":"Maquetado Estático en Html",
       "inicio":"",
       "fin": "",
@@ -85,7 +87,7 @@
    },
    {
       "id": 1,
-      "logoProyecto": "",
+      "logoProyecto": "fa-brands fa-angular",
       "titulo":"Maquetado Dinámico en Angular",
       "inicio":"",
       "fin": "",
@@ -93,7 +95,7 @@
    },
    {
       "id": 2,
-      "logoProyecto": "",
+      "logoProyecto": "assets/img/APLogo-20-20.png",
       "titulo":"Portfolio web. Argentina Programa",
       "inicio":"",
       "fin": "",

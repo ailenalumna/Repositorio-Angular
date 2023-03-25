@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PorfolioService } from '../servicios/porfolio.service';
+
 @Component({
   selector: 'app-redes',
   templateUrl: './redes.component.html',
@@ -8,6 +9,8 @@ import { PorfolioService } from '../servicios/porfolio.service';
 export class RedesComponent implements OnInit {
  redes: any = [];
 
+
+
   constructor(private porfolioService: PorfolioService) { }
 
   ngOnInit(): void {
@@ -15,6 +18,9 @@ export class RedesComponent implements OnInit {
       //definir info a mostrar
       this.redes=porfolio.redes;
    });
+ 
+  
+ 
   }
-
 }
+

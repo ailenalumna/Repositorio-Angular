@@ -14,17 +14,9 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { HabilidadesComponent } from './habilidades/habilidades.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { IndexComponent } from './index/index.component';
 import { EliminarComponent } from './modals/eliminar/eliminar.component';
-import { RedesPanelComponent } from './dashboard/redes-panel/redes-panel.component';
-import { BannerPanelComponent } from './dashboard/banner-panel/banner-panel.component';
-import { AboutPanelComponent } from './dashboard/about-panel/about-panel.component';
-import { WorkPanelComponent } from './dashboard/work-panel/work-panel.component';
-import { EducPanelComponent } from './dashboard/educ-panel/educ-panel.component';
-import { SkillsPanelComponent } from './dashboard/skills-panel/skills-panel.component';
-import { ProyecPanelComponent } from './dashboard/proyec-panel/proyec-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarAcercaDeMiComponent } from './modals/editar-acerca-de-mi/editar-acerca-de-mi.component';
 import { EditarExperienciaComponent } from './modals/editar-experiencia/editar-experiencia.component';
@@ -35,6 +27,9 @@ import { AgregarEducacionComponent } from './modals/agregar-educacion/agregar-ed
 import { AgregarHabilidadesComponent } from './modals/agregar-habilidades/agregar-habilidades.component';
 import { AgregarProyectosComponent } from './modals/agregar-proyectos/agregar-proyectos.component';
 import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agregar-experiencia.component';
+import { AgregarRedComponent } from './modals/agregar-red/agregar-red.component';
+//import { InterceptorService } from './servicios/interceptor.service';
+import { PersonaService } from './servicios/persona.service';
 
 
 @NgModule({
@@ -49,17 +44,9 @@ import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agrega
     HabilidadesComponent,
     ProyectosComponent,
     FooterComponent,
-    DashboardComponent,
     ErrorComponent,
     IndexComponent,
     EliminarComponent,
-    RedesPanelComponent,
-    BannerPanelComponent,
-    AboutPanelComponent,
-    WorkPanelComponent,
-    EducPanelComponent,
-    SkillsPanelComponent,
-    ProyecPanelComponent,
     EditarAcercaDeMiComponent,
     EditarExperienciaComponent,
     EditarEducacionComponent,
@@ -69,6 +56,7 @@ import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agrega
     AgregarHabilidadesComponent,
     AgregarProyectosComponent,
     AgregarExperienciaComponent,
+    AgregarRedComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +65,8 @@ import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agrega
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ PersonaService, ],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

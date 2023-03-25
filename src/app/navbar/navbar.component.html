@@ -5,6 +5,14 @@
         <img src="assets/img/APLogo-20-20.png" alt="argpprod" width="20%" height="">
       </div>
       <app-redes></app-redes>
-        </div>
+      <!--<button *ngIf="!modoEdit" type="button" id="login" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+   
+    
+      <i *ngIf="!userLoginOn" class="fa-solid fa-user-lock fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+      <i *ngIf="userLoginOn"   class="fa-solid fa-arrow-right-from-bracket" type="button"></i>    
+    </div>
+            
+     
       </nav>
       <app-login></app-login>
+       

@@ -14,3 +14,9 @@
     text-align: center;
     --bs-progress-height: 1.5rem;
 }
+.btn.delete{
+position: absolute;
+margin-left: 49rem;
+margin-bottom: -10rem;
+margin-top: -4rem;
+}

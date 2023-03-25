@@ -8,17 +8,17 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="agregarHab">Agregar Nueva Habilidad</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clean()"></button>
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                      <form [formGroup]="habForm"  #form="ngForm">
+                      <form [formGroup]="habForm"  #form="ngForm" (ngSubmit)="onSend($event)">
                         <div class="form-group m-3">
                             <label for="nombreHab">Nombre Habilidad</label>
-                            <input type="text" class="form-control text-center" name="nombreHab" formControlName="nombreHab">
+                            <input type="text" class="form-control text-center" name="nombreHab" formControlName="nombreHab" [(ngModel)]="nombreHab">
                           </div>
-                          <div *ngIf="nombreHab?.errors && nombreHab?.touched">
-                            <div *ngIf="nombreHab?.hasError('required')" class="alert alert-danger" role="alert">
+                          <div *ngIf="NombreHab?.errors && NombreHab?.touched">
+                            <div *ngIf="NombreHab?.hasError('required')" class="alert alert-danger" role="alert">
                               Debe ingresar el nombre de la habilidad.
                             </div>
                           </div>
@@ -26,13 +26,13 @@
                             <label for="porcentaje">Porcentaje</label>
                             <input type="number" class="form-control text-center" name="porcentaje" id="input-porcentaje" formControlName="porcentaje">
                           </div>
-                          <div *ngIf="porcentaje?.errors && porcentaje?.touched">
-                            <div *ngIf="porcentaje?.hasError('required')" class="alert alert-danger" role="alert">
+                          <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+                            <div *ngIf="Porcentaje?.hasError('required')" class="alert alert-danger" role="alert">
                               Debe ingresar el porcentaje de la habilidad.
                             </div>
                           </div>
                 <div class="modal-footer">
-                    <button type="submit" [disabled]="porcentaje?.hasError('required') || nombreHab?.hasError('required')" data-bs-dismiss="modal" class="btn btn-secondary">Guardar</button>
+                    <button type="submit" [disabled]="Porcentaje?.hasError('required') || NombreHab?.hasError('required')" data-bs-dismiss="modal" class="btn btn-secondary">Guardar</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                   </div>
              

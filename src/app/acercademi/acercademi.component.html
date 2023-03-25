@@ -6,14 +6,21 @@
         <div class="col-3">
             <!--Foto perfil-->
             <img [src]="imagenPerfil" class="rounded-circle w-75" alt="" title="">          
-            <h2 class="nombrePerfil">{{nombre}} {{apellido}}</h2> 
-            <h6 class="tituloPerfil">{{tituloPerfil}}</h6>
+            <h2 class="nombrePerfil">{{persona.nombre}} {{persona.apellido}}</h2> 
+            <h6 class="tituloPerfil">{{persona.tituloPerfil}}</h6>
           </div> 
             <div class="col-8 text-md-start">   
-            <h2 class="acercademi">{{tituloAcerca}}</h2>
-            <h6> {{acerca}} </h6>
+            <h2 class="acercademi">{{persona.tituloAcerca}}</h2>
+            <h6> {{persona.acerca}} </h6>
           </div>      
       </div>
     </div>
+    <div *ngIf="modoEdit">
+       <div class="btn lapiz" id="editarPerfil" type="button" data-bs-toggle="modal" data-bs-target="#editarPerfil">
+        
+
+      </div>
+       </div>
+      
     <app-editar-acerca-de-mi></app-editar-acerca-de-mi>
   </section>

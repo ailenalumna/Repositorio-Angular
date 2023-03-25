@@ -7,13 +7,16 @@ import { PorfolioService } from '../servicios/porfolio.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+userLoginOn:boolean=false; 
 imagenLogoAP: string = '';
 imagenTitulo: string = '';
 
-  constructor(private porfolioService: PorfolioService ) { }
+
+
+  constructor(private porfolioService: PorfolioService) { }
 
   ngOnInit(): void {
     
-  }
-
+      }
+      
 }

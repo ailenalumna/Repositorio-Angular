@@ -8,32 +8,32 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="agregarProy">Agregar Nuevo Proyecto</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clean()"></button>
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                      <form [formGroup]="proyForm">
+                      <form [formGroup]="proyForm"  (ngSubmit)="onSend($event)">
                         <div class="form-group m-3">
-                                <label for="nombreProy">Nombre del Proyecto</label>
-                                <input type="text" class="form-control text-center" id="nombreProyecto" name="nombreProy" formControlName="nombreProy">
+                                <label for="titulo">Nombre del Proyecto</label>
+                                <input type="text" class="form-control text-center" id="titulo" name="titulo" formControlName="titulo">
                               </div>
-                              <div *ngIf="nombreProy?.errors && nombreProy?.touched">
-                                <div *ngIf="nombreProy?.hasError('required')" class="alert alert-danger" role="alert">
+                              <div *ngIf="Titulo?.errors && Titulo?.touched">
+                                <div *ngIf="Titulo?.hasError('required')" class="alert alert-danger" role="alert">
                                   Debe ingresar el nombre del proyecto.
                                 </div>
                               </div>
                               <div class="form-group m-3">
-                                <label for="descripcionProy">Descripción del proyecto</label>
-                                <textarea rows="3" type="text" class="form-control" id="descripcionProy" name="descripcionProy" formControlName="descripcionProy"></textarea>
+                                <label for="descripcion">Descripción del proyecto</label>
+                                <textarea rows="3" type="text" class="form-control" id="descripcion" name="descripcion" formControlName="descripcion"></textarea>
                               </div>
-                              <div *ngIf="descripcionProy?.errors &&descripcionProy?.touched">
-                                <div *ngIf="descripcionProy?.hasError('required')" class="alert alert-danger" role="alert">
+                              <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                                <div *ngIf="Descripcion?.hasError('required')" class="alert alert-danger" role="alert">
                                   Debe ingresar la descripción del proyecto.
                                 </div>
                               </div>
                               <div class="form-group m-3">
-                                <label for="imgProy">Imagen del Proyecto</label>
-                                <input type="file" class="form-control" id="imgProy" name="imgProy" formControlName="imgProy">
+                                <label for="logoProyecto">Imagen del Proyecto</label>
+                                <input type="file" class="form-control" id="logoProyecto" name="logoProyecto" formControlName="logoProyecto">
                               </div>
                 <div class="modal-footer">
                     <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary">Guardar</button>
