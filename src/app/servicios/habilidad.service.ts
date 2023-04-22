@@ -9,8 +9,8 @@ export class HabilidadService {
   url= 'http://localhost:8080/habilidad/'
   constructor(private httpClient:HttpClient) { }
 
-  public list(): Observable<Habilidades>{
-    return this.httpClient.get<Habilidades>(this.url + 'lista');
+  public list(): Observable<Habilidades[]>{
+    return this.httpClient.get<Habilidades[]>(this.url + 'lista');
       }
     
       public find(id: number): Observable<any>{

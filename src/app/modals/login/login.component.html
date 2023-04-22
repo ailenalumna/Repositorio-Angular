@@ -1,5 +1,5 @@
 <!-- Modal Login -->
-<form [formGroup]="form"  (ngSubmit)="onEnviar($event)">    
+<form [formGroup]="form"  (ngSubmit)="onEnviar($event)">   
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -41,7 +41,7 @@
     </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" (click)="login()" class="btn btn-primary">Iniciar Sesión</button>
+          <button type="submit" (click)="onEnviar($event)" class="btn btn-primary">Iniciar Sesión</button>
         </div>
       </div>
     </div>

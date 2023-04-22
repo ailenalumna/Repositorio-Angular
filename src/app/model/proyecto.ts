@@ -6,11 +6,11 @@ export class Proyecto {
     fin : string;
     descripcion: string;
 
-    constructor(titulo:string, inicio:string, fin:string, logoProyecto:string, descripcion:string){
+    constructor(logoProyecto:string,titulo:string, inicio:string, fin:string,  descripcion:string){
+        this.logoProyecto = logoProyecto;
         this.titulo = titulo;
         this.inicio = inicio;
         this.fin = fin;
-        this.logoProyecto = logoProyecto;
         this.descripcion = descripcion;
     }
 }

@@ -51,35 +51,40 @@ persona: Persona = new Persona("", "", "", "", "", "", "", "", "");
     if (this.form.valid){
       this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>{
         console.log("DATA: " + JSON.stringify(data));
-        
+       window.location.reload();
+       this.router.navigateByUrl('/inicio');
       //  if(data){
         //  alert("Estás logeado");
        // }else{alert("acceso incorrecto");
      // alert("error al iniciar sesión");
     //}
-        window.location.reload();
-      }, error =>{
+       
+      }, error => {
         alert("Error al iniciar sesión.")
+  
       })
+      //this.router.navigate(['']);
+  
       // Llamamos a nuestro servicio para enviar los datos al servidor
       // También podríamos ejecutar alguna lógica extra
       
-    }else{
+    } else{
+      //this.form.markAllAsTouched(); 
       alert("Hay un error en el formulario.")
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
+      // Corremos todas las validaciones para que s e ejecuten los mensajes de error en el template     
       //this.form.markAllAsTouched(); 
     }
  
   }
-  login(){
-    if(this.form.valid){
-      console.log("Llamar al servicio de login");
-     // this.router.navigateByUrl('');
+  //loginPersona(){
+    //if(this.form.valid){
+     // this.autService.loginPersona(this.form.value);
+     // this.router.navigate(['']);
       //this.form.reset();
-    }
-    else{
-    alert("Error al ingresar los datos.");
-    }
+   // }
+    //else{
+    //alert("Error al ingresar los datos.");
+   // }
   }
 
-}
+

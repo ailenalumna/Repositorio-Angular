@@ -1,10 +1,10 @@
 export class Red {
     id? : number;
-    nombre : string;
     icono : string;
+    url : string;
 
-    constructor(nombre:string, icono:string){
-        this.nombre = nombre;
+    constructor(icono:string, url:string){
         this.icono = icono;
+        this.url = url;
     }
 }

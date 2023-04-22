@@ -9,6 +9,7 @@ import { Experiencia } from 'src/app/model/experiencia';
 })
 export class AgregarExperienciaComponent implements OnInit {
 expForm: FormGroup;
+//modoEdit:boolean=false;
 descripTrabajo: string=''; 
 personaid: number = 1;
   constructor(private formBuilder: FormBuilder,private sExperiencia: ExperienciaService) { 
@@ -27,7 +28,7 @@ personaid: number = 1;
   }
 
   onCreate(): void{
-    const expe = new Experiencia(this.descripTrabajo,this.personaid);
+    const expe = new Experiencia(this.descripTrabajo);
   this.sExperiencia.create(expe).subscribe(data=>{alert("Experiencia añadida")
 window.location.reload();
 })

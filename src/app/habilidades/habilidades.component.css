@@ -16,7 +16,6 @@
 }
 .btn.delete{
 position: absolute;
-margin-left: 49rem;
-margin-bottom: -10rem;
-margin-top: -4rem;
+margin-left: 51rem;
+margin-top:auto;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from '../servicios/porfolio.service';
+//import { PorfolioService } from '../servicios/porfolio.service';
+import { Habilidades } from '../model/habilidad';
+import { HabilidadService } from '../servicios/habilidad.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -7,15 +9,25 @@ import { PorfolioService } from '../servicios/porfolio.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  habilidades: any = [];
-
-  constructor( private porfolioService: PorfolioService ) { }
+  habilidades: Habilidades[]=[]; //se llama al modelo que es un array
+  modoEdit: any;
+  constructor( private sHabilidad: HabilidadService ) { }
 
   ngOnInit(): void {
-    this.porfolioService.getDatos().subscribe(porfolio =>{
-       //definir info a mostrar
-       this.habilidades=porfolio.habilidades;
-    });
+    this.cargarHabilidad();
+ 
   }
-
+cargarHabilidad():void{
+  this.sHabilidad.list().subscribe(data =>{this.habilidades=data});
+}
+delete(id?:number){
+  if(id != undefined){
+    this.sHabilidad.delete(id).subscribe(
+      data =>{
+        alert("Eliminado correctamente");
+        this.cargarHabilidad();
+      }, err =>{
+        alert("No se pudo eliminar la habilidad");
+      })
+  }}
 }

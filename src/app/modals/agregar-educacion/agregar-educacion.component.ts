@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { EducacionService } from 'src/app/servicios/educacion.service';
 import { Educacion } from 'src/app/model/educacion';
+import { EducacionService } from 'src/app/servicios/educacion.service';
+
 @Component({
   selector: 'app-agregar-educacion',
   templateUrl: './agregar-educacion.component.html',
@@ -13,7 +14,7 @@ export class AgregarEducacionComponent implements OnInit {
   descripcionCurso: string='';
   inicio: string='';
   fin: string='';
-  imgCurso: string='';
+  imagen: string='';
 
   constructor(private formBuilder: FormBuilder, private sEducacion: EducacionService) {
     this.educacionForm = this.formBuilder.group(
@@ -22,9 +23,8 @@ export class AgregarEducacionComponent implements OnInit {
         descripcionCurso: ['', [Validators.required]],
         inicio: [''],
         fin: [''],
-        imgCurso: ['', [Validators.required]],
-      }
-    )
+        imagen: ['', [Validators.required]],
+      })
    }
 
   ngOnInit(): void {
@@ -35,28 +35,34 @@ export class AgregarEducacionComponent implements OnInit {
   get DescripcionCurso() {
     return this.educacionForm.get("descripcionCurso");
   }
-  get ImagenCurso() {
-    return this.educacionForm.get("imgCurso");
+  get Inicio(){
+    return this.educacionForm.get("inicio");
+  }
+  get Fin(){
+    return this.educacionForm.get("fin");
+  }
+  get Imagen() {
+    return this.educacionForm.get("imagen");
   }
 
 
   onCreate(): void{
-    const educ = new Educacion(this.tituloCurso, this.descripcionCurso, this.inicio, this.fin, this.imgCurso);
-  this.sEducacion.create(educ).subscribe(data=>{alert("Educación añadida")
+    const educ = new Educacion(this.tituloCurso, this.descripcionCurso, this.inicio, this.fin, this.imagen);
+  this.sEducacion.create(educ).subscribe(data=>{alert("Educación añadida")})
 window.location.reload();
-})
 }
 clean():void{
   this.educacionForm.reset();
 }
- onSend(event:Event){
-  event.preventDefault;
-  if (this.educacionForm.valid){
-    this.onCreate();
-  }else{
-    alert("falló en la carga, intente nuevamente");
-    this.educacionForm.markAllAsTouched();
-  }
- }
+ 
 
 }
+//onSend(event:Event){
+//  event.preventDefault;
+ // if (this.educacionForm.valid){
+   // this.onCreate();
+ // }else{
+   // alert("falló en la carga, intente nuevamente");
+   // this.educacionForm.markAllAsTouched();
+ // }
+// }

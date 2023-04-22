@@ -1,39 +1,46 @@
 <div class="container text-center">
     <div class="row">
     <div class="col-4">
-        <button type="submit" class="btn btn-close-black"><i class="fa-solid fa-plus" data-bs-toggle="modal" data-bs-target="#agregarHab"></i></button>
+        <button type="submit" class="btn btn-close-black"><i class="fa-solid fa-plus" *ngIf="!modoEdit" data-bs-toggle="modal" data-bs-target="#agregarHab"></i></button>
     </div>
         <div class="modal fade" id="agregarHab" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="agregarHab">Agregar Nueva Habilidad</h5>
+                  <h5 class="modal-title" id="agregarHab">Agregar Habilidad</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clean()"></button>
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                      <form [formGroup]="habForm"  #form="ngForm" (ngSubmit)="onSend($event)">
+                      <form [formGroup]="habForm"  #form="ngForm" (ngSubmit)="habForm.valid && onCreate()">
                         <div class="form-group m-3">
                             <label for="nombreHab">Nombre Habilidad</label>
-                            <input type="text" class="form-control text-center" name="nombreHab" formControlName="nombreHab" [(ngModel)]="nombreHab">
+                            <input type="text" class="form-control text-center"  name="habilidad" formControlName="habilidad" [(ngModel)]="habilidad">
                           </div>
-                          <div *ngIf="NombreHab?.errors && NombreHab?.touched">
-                            <div *ngIf="NombreHab?.hasError('required')" class="alert alert-danger" role="alert">
+                          <div *ngIf="Habilidad?.errors && Habilidad?.touched">
+                            <p *ngIf="Habilidad?.hasError('required')" class="alert alert-danger" role="alert">
                               Debe ingresar el nombre de la habilidad.
-                            </div>
+                            </p>
                           </div>
                           <div class="form-group m-3">
                             <label for="porcentaje">Porcentaje</label>
-                            <input type="number" class="form-control text-center" name="porcentaje" id="input-porcentaje" formControlName="porcentaje">
+                            <input type="number" min="0" max="100"  class="form-control text-center"  name="porcentaje" id="porcentaje" formControlName="porcentaje" [(ngModel)]="porcentaje">
                           </div>
                           <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
-                            <div *ngIf="Porcentaje?.hasError('required')" class="alert alert-danger" role="alert">
+                            <p *ngIf="Porcentaje?.hasError('required')" class="alert alert-danger" role="alert">
                               Debe ingresar el porcentaje de la habilidad.
-                            </div>
+                            </p>
+                            <p *ngIf="Porcentaje?.hasError('min')" class="alert alert-danger" role="alert">
+                              El porcentaje mínimo es 0.
+                            </p>
+                            <p *ngIf="Porcentaje?.hasError('max')" class="alert alert-danger" role="alert">
+                              El porcentaje mínimo es 100.
+                            </p>
                           </div>
+                          
                 <div class="modal-footer">
-                    <button type="submit" [disabled]="Porcentaje?.hasError('required') || NombreHab?.hasError('required')" data-bs-dismiss="modal" class="btn btn-secondary">Guardar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" [disabled]="Porcentaje?.hasError('required') || Habilidad?.hasError('required')" data-bs-dismiss="modal" class="btn btn-secondary">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"(click)="clean()">Cancelar</button>
                   </div>
-             
+                </form>
                 

@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditarAcercaDeMiComponent implements OnInit {
   acercaForm: FormGroup;
+  //modoEdit: boolean=false;
   constructor(private formBuilder: FormBuilder) { 
     this.acercaForm = this.formBuilder.group({
       imgPerfil:['', [Validators.required]],

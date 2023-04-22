@@ -7,16 +7,17 @@
       <div class="container text-center" *ngFor="let educacion of educaciones">
         <div class="row">
           <div class="col-3"> 
-            <img [src]="educacion.img" class="d-block w-100" alt="...">
+            <img [src]="educacion.imagen" class="d-block w-100" alt="...">
             <br>
             <br>           
           </div>
           <div class="col-8">
-            <h5 class="mt-4">{{educacion.tituloCurso}}</h5> 
+            <h3 class="mt-4">{{educacion.tituloCurso}}</h3> 
+            <h5 class="mt-4">{{educacion.descripcionCurso}}</h5>
             <br> 
           </div>
           <div class="col-1"> 
-            <div class="btn delete" type="button"><i class="fa-solid fa-trash"></i>
+            <div class="btn delete" type="button"><i class="fa-solid fa-trash" (click)="delete(educacion.id)"></i>
             </div>
             <app-editar-educacion></app-editar-educacion>
             <app-agregar-educacion></app-agregar-educacion>

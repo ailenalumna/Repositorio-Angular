@@ -9,8 +9,8 @@ export class EducacionService {
   url= 'http://localhost:8080/educacion/'
   constructor(private httpClient:HttpClient) { }
 
-  public list(): Observable<Educacion>{
-    return this.httpClient.get<Educacion>(this.url + 'lista');
+  public list(): Observable<Educacion[]>{
+    return this.httpClient.get<Educacion[]>(this.url + 'lista');
       }
     
       public find(id: number): Observable<any>{

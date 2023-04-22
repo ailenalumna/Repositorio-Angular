@@ -8,6 +8,7 @@ import { PorfolioService } from '../servicios/porfolio.service';
 })
 export class NavbarComponent implements OnInit {
 userLoginOn:boolean=false; 
+modoEdit: any;
 imagenLogoAP: string = '';
 imagenTitulo: string = '';
 

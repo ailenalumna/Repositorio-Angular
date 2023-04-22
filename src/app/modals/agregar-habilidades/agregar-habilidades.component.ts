@@ -10,41 +10,51 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 })
 export class AgregarHabilidadesComponent implements OnInit {
   habForm : FormGroup;
-  nombreHab : string='';
-  porcentaje : number=0;
-
+  habilidad : string='';
+  porcentaje : number=0 ;
+  modoEdit: boolean=false;
   constructor(private formBuilder: FormBuilder, private sHabilidad: HabilidadService) { 
     this.habForm = this.formBuilder.group({
-      nombreHab: ['', [Validators.required]],
-      porcentaje: ['', [Validators.required]]
+      habilidad: ['', [Validators.required]],
+      porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
     })
   }
 
   ngOnInit(): void {
   }
   
-  get NombreHab() {
-    return this.habForm.get("nombreHab");
+  get Habilidad() {
+    return this.habForm.get("habilidad");
   }
   get Porcentaje() {
     return this.habForm.get("porcentaje");
   }
+  get HabilidadValid(){
+    return this.Habilidad?.touched && !this.Habilidad.valid;
+  }
+  get PorcentajeValid(){
+    return this.Porcentaje?.touched && !this.Porcentaje.valid;
+  }
 
   onCreate(): void{
-    const hab = new Habilidades(this.nombreHab, this.porcentaje);
+    const hab = new Habilidades(this.habilidad, this.porcentaje);
     this.sHabilidad.create(hab).subscribe(data=>{alert("Habilidad añadida")})
     window.location.reload();
   }
   clean():void{
     this.habForm.reset();
   }
-   onSend(event:Event){
-    event.preventDefault;
-    if (this.habForm.valid){
-      this.onCreate();
-    }else{
-      alert("falló en la carga, intente nuevamente");
-      this.habForm.markAllAsTouched();
-    }
-   }
+
 }
+
+
+
+//onSend(event:Event){
+ // event.preventDefault;
+  //if (this.habForm.valid){
+    //this.onCreate();
+  //}else{
+   // alert("falló en la carga, intente nuevamente");
+    //this.habForm.markAllAsTouched();
+  //}
+// }
