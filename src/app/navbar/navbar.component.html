@@ -7,12 +7,13 @@
       <app-redes></app-redes>
       <!--<button *ngIf="!modoEdit" type="button" id="login" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
    
-    
-      <i *ngIf="!userLoginOn" class="fa-solid fa-user-lock fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-      <i *ngIf="userLoginOn"   class="fa-solid fa-arrow-right-from-bracket" type="button"></i>    
+    <div *ngIf="!modoEdit">
+      <i class="fa-solid fa-user-lock fa-xl" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
     </div>
-            
-     
-      </nav>
+    <div *ngIf="modoEdit">
+      <i   type="button" class="fa-solid fa-arrow-right-from-bracket"  (click)="cerrarSesion()"></i>    
+    </div>
+    </div>
+      
       <app-login></app-login>
-       
+    </nav>

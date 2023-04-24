@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {  HttpClientModule } from '@angular/common/http';
 
+import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -28,7 +28,7 @@ import { AgregarHabilidadesComponent } from './modals/agregar-habilidades/agrega
 import { AgregarProyectosComponent } from './modals/agregar-proyectos/agregar-proyectos.component';
 import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agregar-experiencia.component';
 import { AgregarRedComponent } from './modals/agregar-red/agregar-red.component';
-//import { InterceptorService } from './servicios/interceptor.service';
+import { InterceptorService } from './servicios/interceptor.service';
 import { PersonaService } from './servicios/persona.service';
 
 
@@ -58,15 +58,16 @@ import { PersonaService } from './servicios/persona.service';
     AgregarExperienciaComponent,
     AgregarRedComponent,
   ],
-  imports: [
+ 
+  providers: [ PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
+  bootstrap: [AppComponent],
+   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-  ],
-  providers: [ PersonaService, ],
-  bootstrap: [AppComponent],
+  ]
 
 })
 export class AppModule { }

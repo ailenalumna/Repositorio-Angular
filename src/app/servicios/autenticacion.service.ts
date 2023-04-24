@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject,  Observable, map } from 'rxjs';
 
 
 
@@ -8,7 +8,8 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  //url= "http://localhost:8080/persona/autenticacion/login";
+  url="http://localhost:8080/persona/autenticacion/login";
+
    currentUserSubject:BehaviorSubject<any>;
    sessionStorage: any;
   
@@ -17,19 +18,19 @@ export class AutenticacionService {
     (JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
 
   }
+
   loginPersona(credenciales:any):Observable<any>{ 
      console.log(credenciales);
      var httpOptions = { 
      headers: new HttpHeaders({
-     'Content-Type' : 'application/json'
-     }),
+     'Content-Type' : 'application/json'}),
      }
-     return this.http.post<any>( credenciales, httpOptions).pipe(map(data => {
+     return this.http.post<any>( this.url, credenciales, httpOptions).pipe(map(data => {
      sessionStorage.setItem('currentUser', JSON.stringify(data));
      this.currentUserSubject.next(data);
-     console.log("aut service esta corriendo "+ JSON.stringify(data));
+     console.log("aut service esta corriendo" + JSON.stringify(data));
      return data;
-     }));
+     }))
     }
     
      get usuarioAutenticado() {

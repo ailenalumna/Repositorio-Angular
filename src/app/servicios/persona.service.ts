@@ -10,8 +10,8 @@ export class PersonaService {
   url= 'http://localhost:8080/persona/'
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<Persona>{
-    return this.http.get<Persona>(this.url + 'lista');
+  public list(): Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.url + 'lista');
       }
     
       public find(): Observable<any>{

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service'; 
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
+ 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,28 +13,29 @@ import { Persona } from 'src/app/model/persona';
 })
 export class LoginComponent implements OnInit {
 form: FormGroup;
-persona: Persona = new Persona("", "", "", "", "", "", "", "", "");
+persona: Persona = new Persona("","","","","","","","","","");
+modoEdit: boolean=false ;
 
-  constructor(private router: Router , private formBuilder: FormBuilder, private autService: AutenticacionService) {
+  constructor(private ruta: Router , private formBuilder: FormBuilder, private autService: AutenticacionService) {
      ///Creamos el grupo de controles para el formulario de login
-     this.form= this.formBuilder.group({
-      email:['', [Validators.required,Validators.email]],
+     this.form=this.formBuilder.group({
       clave:['',[Validators.required,Validators.minLength(8)]],
-   
+      email:['', [Validators.required,Validators.email]],
    })
    }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
   //metodos para el formulario
-
+  
+//toma el dato de la password
+get Clave(){
+  return this.form.get('clave');
+}
  //toma el dato del mail
  get Email(){
   return this.form.get('email');
  }
-  //toma el dato de la password
-  get Clave(){
-    return this.form.get('clave');
-  }
+  
 
 //metodo de validacion de password
   get ClaveValid(){
@@ -49,20 +53,20 @@ persona: Persona = new Persona("", "", "", "", "", "", "", "", "");
     event.preventDefault; 
  
     if (this.form.valid){
-      this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>{
+      this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>
+        {
         console.log("DATA: " + JSON.stringify(data));
        window.location.reload();
-       this.router.navigateByUrl('/inicio');
-      //  if(data){
-        //  alert("Estás logeado");
+       //this.ruta.navigate(['']);
+      
+       // if(data){
+       //   alert("Estás logeado");
        // }else{alert("acceso incorrecto");
-     // alert("error al iniciar sesión");
+      //alert("error al iniciar sesión");
     //}
        
-      }, error => {
-        alert("Error al iniciar sesión.")
-  
       })
+      
       //this.router.navigate(['']);
   
       // Llamamos a nuestro servicio para enviar los datos al servidor

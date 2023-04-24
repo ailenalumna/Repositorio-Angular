@@ -1,17 +1,18 @@
 <!-- Modal Login -->
-<form [formGroup]="form"  (ngSubmit)="onEnviar($event)">   
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form (ngSubmit)="onEnviar($event)" [formGroup]="form" > 
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <h5 class="modal-title" id="exampleModal">Login</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-m-10">
-              <input type="email" class="form-control" id="staticEmail" value="email@example.com" formControlName="email" [class.border-danger]="EmailValid" [(ngModel)]="persona.email">
+              <input type="email"  formControlName="email"  class="form-control"  [class.border-danger]="EmailValid" [(ngModel)]="persona.email"
+              [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}" id="staticEmail" value="email@example.com">  
             </div>
             <!-- Gracias al getter que configuramos en el controlador -->
     <div *ngIf="Email?.errors  && Email?.touched">    
@@ -26,8 +27,8 @@
           <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
             <div class="col-m-10">
-            <input type="password" formControlName="clave" [class.border-danger]="ClaveValid" class="form-control" id="inputPassword" [(ngModel)]="persona.clave"
-            >
+            <input type="password" formControlName="clave" [class.border-danger]="ClaveValid" class="form-control" [(ngModel)]="persona.clave"
+            [ngClass]="{'is-invalid': Clave?.errors && Clave?.touched, 'is-valid': !Clave?.errors && Clave?.touched}" id="inputPassword">
             </div>
           </div>
            <!-- Gracias al getter que configuramos en el controlador -->
@@ -41,9 +42,10 @@
     </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" (click)="onEnviar($event)" class="btn btn-primary">Iniciar Sesión</button>
+          <button type="submit" *ngIf="!modoEdit"  class="btn btn-primary">Iniciar Sesión</button>
         </div>
       </div>
     </div>
-  </div>
+  
 </form>
+</div>

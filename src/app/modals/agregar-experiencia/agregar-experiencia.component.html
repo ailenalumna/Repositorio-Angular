@@ -8,22 +8,23 @@
         <div class="modal-dialog modal-dialog-centered modal">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Agregar Experiencia</h5>
+              <h5 class="modal-title" id="agregarExp">Agregar Experiencia</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clean()"></button>
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form [formGroup]="expForm"  #form="ngForm" (ngSubmit)="onSend($event)">
+                    <form [formGroup]="expForm"  #form="ngForm" (ngSubmit)="onCreate()">
             <div class="form-group m-3">
-                <label for="descripTrabajo">Descripción del trabajo</label>
-                <textarea rows="5" type="text" class="form-control text center" name="descripTrabajo" formControlName="descripTrabajo" [(ngModel)]="descripTrabajo"></textarea>
+                <label for="descripcion">Descripción del trabajo</label>
+                <textarea rows="5" type="text" class="form-control text center" name="descripcion" formControlName="descripcion"></textarea>
               </div>
-              <div *ngIf="DescripTrabajo?.errors && DescripTrabajo?.touched">
-                <div *ngIf="DescripTrabajo?.hasError('required')" class="alert alert-danger" role="alert">
+              <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                <p *ngIf="Descripcion?.hasError('required')" class="alert alert-danger" role="alert">
                   Debe ingresar la descripción del trabajo.
-                </div>
+                </p>
               </div>
                <div class="modal-footer">
                     <button type="submit" data-bs-dismiss="modal" class="btn btn-secondary">Guardar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="clean()">Cancelar</button>
                   </div>
+                    </form>

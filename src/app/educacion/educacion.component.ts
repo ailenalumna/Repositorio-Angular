@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from '../model/educacion';
 import { EducacionService } from '../servicios/educacion.service';
+import { AutenticacionService } from '../servicios/autenticacion.service';
 //import { PorfolioService } from '../servicios/porfolio.service';
 @Component({
   selector: 'app-educacion',
@@ -9,11 +10,21 @@ import { EducacionService } from '../servicios/educacion.service';
 })
 export class EducacionComponent implements OnInit {
 educaciones: Educacion[]=[];
-
-  constructor( private sEducacion: EducacionService ) { }
+modoEdit: any;
+  constructor( private sEducacion: EducacionService, private autService: AutenticacionService ) { }
 
   ngOnInit(): void {
+
    this.cargarEducacion();
+
+   if (sessionStorage.getItem('currentUser') == "null"){
+    this.modoEdit = false;
+  }else if (sessionStorage.getItem('currentUser') == null){
+    this.modoEdit = false;
+  }else {
+    this.modoEdit = true;
+  }
+
   }
   cargarEducacion():void{
     this.sEducacion.list().subscribe(data =>{this.educaciones=data});
@@ -22,10 +33,10 @@ educaciones: Educacion[]=[];
     if(id != undefined){
       this.sEducacion.delete(id).subscribe(
         data =>{
-          alert("Eliminado correctamente");
+         
           this.cargarEducacion();
-        }, err =>{
-          alert("No se pudo eliminar la educación");
-        })
-    }}
+        });
+        window.location.reload();
+    }
+  }
 }

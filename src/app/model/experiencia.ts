@@ -1,6 +1,6 @@
 export class Experiencia {
     id? : number;
-    descripcion : String;
+    descripcion : string;
    // personaid : number;
 
     constructor(descripcion:string){

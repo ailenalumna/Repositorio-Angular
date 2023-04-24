@@ -1,19 +1,21 @@
  <!--seccion acerca de mi-->
  <img [src]="imagenFondo" class="d-block w-100" alt="..." width="250" height="400">
- <section id="sobreMi" class="sobreMi">    
-    <div class="acercaDe container-fluid text-center rounded shadow-sm p-3 bg-body-transparent">
-      <div class="row p-3">
+ <section id="acercaDeMi" class="acercaDeMi">    
+    <div class="container-fluid text-center rounded shadow-sm p-3 bg-body-transparent">
+      <div class="row p-3" *ngFor="let persona of persona">
         <div class="col-3">
             <!--Foto perfil-->
-            <img [src]="imagenPerfil" class="rounded-circle w-75" alt="" title="">          
-            <h2 class="nombrePerfil">{{nombre}} {{apellido}}</h2> 
-            <h6 class="tituloPerfil">{{tituloPerfil}}</h6>
+            <img [src]="persona.imagenPerfil" class="rounded-circle w-75" alt="" title="">          
+            <h2 class="nombrePerfil">{{persona.nombre}} {{persona.apellido}}</h2> 
+            <h6 class="tituloPerfil">{{persona.tituloPerfil}}</h6>
           </div> 
             <div class="col-8 text-md-start">   
-            <h2 class="acercademi">{{tituloAcerca}}</h2>
-            <h6> {{acerca}} </h6>
+            <h2 class="acercademi">{{persona.tituloAcerca}}</h2>
+            <h6> {{persona.acerca}} </h6>
           </div>      
       </div>
     </div>
+    <div *ngIf="modoEdit">
     <app-editar-acerca-de-mi></app-editar-acerca-de-mi>
+  </div>
   </section>

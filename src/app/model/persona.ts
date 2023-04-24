@@ -9,11 +9,11 @@ export class Persona {
     tituloAcerca: String;
     acerca: String;
     imagenFondo: String;
-    email: String;
+    imagenLogoAP: String;
     clave: String;
-   
+    email: String;   
 
-    constructor(nombre: String, apellido: String, imagenPerfil: String,  tituloPerfil: String, tituloAcerca: String, acerca: String, imagenFondo: String, email: String, clave: String)
+    constructor(nombre: String, apellido: String, imagenPerfil: String,  tituloPerfil: String, tituloAcerca: String, acerca: String, imagenFondo: String,imagenLogoAP:String ,clave: String,email: String )
 
     {
       
@@ -24,8 +24,9 @@ export class Persona {
         this.tituloAcerca = tituloAcerca;
         this.acerca = acerca;
         this.imagenFondo = imagenFondo;
-        this.email = email;
+        this.imagenLogoAP = imagenLogoAP;
         this.clave = clave;
+        this.email = email;
     
  
          }

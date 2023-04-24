@@ -25,4 +25,7 @@ this.editareducForm = this.formBuilder.group({
   get certificado() {
     return this.editareducForm.get("certificado");
   }
+
+
+
 }

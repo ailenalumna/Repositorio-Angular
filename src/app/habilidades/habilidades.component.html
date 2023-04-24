@@ -10,12 +10,12 @@
         
         </div>
        
-          <div type="button" class="btn delete"><i class="fa-solid fa-trash" (click)="delete(habilidad.id)"></i>
+          <div type="button" *ngIf="modoEdit" class="btn delete"><i class="fa-solid fa-trash" (click)="delete(habilidad.id)"></i>
           </div>
        
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-4" *ngIf="modoEdit" >
      <!--<button type="submit" class="btn delete"  *ngIf="!modoEdit"><i class="fa-solid fa-trash"></i>
       </button>--> 
       

@@ -9,8 +9,8 @@ export class ProyectoService {
   url= 'http://localhost:8080/proyecto/'
   constructor(private httpClient:HttpClient) { }
 
-  public list(): Observable<Proyecto>{
-    return this.httpClient.get<Proyecto>(this.url + 'lista');
+  public list(): Observable<Proyecto[]>{
+    return this.httpClient.get<Proyecto[]>(this.url + 'lista');
       }
     
       public find(id: number): Observable<any>{

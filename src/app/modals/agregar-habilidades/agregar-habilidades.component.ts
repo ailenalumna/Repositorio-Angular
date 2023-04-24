@@ -12,7 +12,8 @@ export class AgregarHabilidadesComponent implements OnInit {
   habForm : FormGroup;
   habilidad : string='';
   porcentaje : number=0 ;
-  modoEdit: boolean=false;
+  modoEdit:boolean=false;
+
   constructor(private formBuilder: FormBuilder, private sHabilidad: HabilidadService) { 
     this.habForm = this.formBuilder.group({
       habilidad: ['', [Validators.required]],

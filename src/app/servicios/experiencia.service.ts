@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { outputAst } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../model/experiencia';
@@ -11,8 +10,8 @@ export class ExperienciaService {
   url= 'http://localhost:8080/experiencia/'
   constructor(private httpClient:HttpClient) { }
 
-  public list(): Observable<Experiencia>{
-return this.httpClient.get<Experiencia>(this.url + 'lista');
+  public list(): Observable<any>{
+return this.httpClient.get<any>(this.url + 'lista');
   }
 
   public find(id: number): Observable<any>{
