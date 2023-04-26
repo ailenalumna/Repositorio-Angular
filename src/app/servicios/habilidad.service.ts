@@ -6,7 +6,7 @@ import { Habilidades } from '../model/habilidad';
   providedIn: 'root'
 })
 export class HabilidadService {
-  url= 'http://localhost:8080/habilidad/'
+  url= 'https://portfolio-back-8y7e.onrender.com/habilidad/';
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Habilidades[]>{

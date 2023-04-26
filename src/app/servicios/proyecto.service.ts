@@ -6,7 +6,7 @@ import { Proyecto } from '../model/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  url= 'http://localhost:8080/proyecto/'
+  url= 'https://portfolio-back-8y7e.onrender.com/proyecto/';
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Proyecto[]>{
