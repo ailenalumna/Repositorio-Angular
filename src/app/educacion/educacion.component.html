@@ -17,6 +17,7 @@
             <br> 
           </div>
           <div class="col-1" *ngIf="modoEdit"> 
+            <h5 class="mt-4">{{educacion.inicio}} - {{educacion.fin}}</h5>
             <div class="btn delete" type="button"><i class="fa-solid fa-trash" (click)="delete(educacion.id)"></i>
             </div>
             <app-editar-educacion></app-editar-educacion>
