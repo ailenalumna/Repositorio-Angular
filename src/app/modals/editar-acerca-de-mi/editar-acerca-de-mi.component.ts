@@ -9,10 +9,11 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./editar-acerca-de-mi.component.css']
 })
 export class EditarAcercaDeMiComponent implements OnInit {
+  
   acercaForm: FormGroup;
   persona: Persona = new Persona("","","","","","","","","","");
   id: number = 1;
-  //modoEdit: boolean=false;
+  modoEdit: any;
   constructor(private formBuilder: FormBuilder, private pservice: PersonaService, private activedRoute: ActivatedRoute, private router: Router) { 
     this.acercaForm = this.formBuilder.group({
 
@@ -42,8 +43,15 @@ export class EditarAcercaDeMiComponent implements OnInit {
   
   ngOnInit(): void {
     
-    this.cargarInfo(); 
-   
+    this.cargarInfo();
+    
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
     
   }
   onUpdate(): void{
