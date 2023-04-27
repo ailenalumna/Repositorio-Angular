@@ -1,11 +1,11 @@
  <!--seccion acerca de mi-->
- <img [src]="imagenFondo" class="d-block w-100" alt="..." width="250" height="400">
+ <img src="assets/img/foto exp.jpg" class="d-block w-100" alt="" width="250" height="400">
  <section id="acercaDeMi" class="acercaDeMi">    
     <div class="container-fluid text-center rounded shadow-sm p-3 bg-body-transparent">
       <div class="row p-3" *ngFor="let persona of persona">
         <div class="col-3">
             <!--Foto perfil-->
-            <img [ngModel]="persona.imagenPerfil" class="rounded-circle w-75" alt="" title="">          
+            <img [src]="persona.imagenPerfil" class="rounded-circle w-75" alt="imagenPerfil" title="">   
             <h2 class="nombrePerfil">{{persona.nombre}} {{persona.apellido}}</h2> 
             <h6 class="tituloPerfil">{{persona.tituloPerfil}}</h6>
           </div> 

@@ -9,7 +9,7 @@ import { AutenticacionService } from '../servicios/autenticacion.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-experiencia:  any ;
+experiencia:  string='';
 modoEdit: any;
 
   constructor(private sExperiencia: ExperienciaService, private autService: AutenticacionService ) { }

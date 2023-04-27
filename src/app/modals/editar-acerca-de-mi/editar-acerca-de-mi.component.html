@@ -14,7 +14,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                      <form [formGroup]="acercaForm" (ngSubmit)="onEnviar($event)" >
+                      <form [formGroup]="acercaForm" (ngSubmit)="onUpdate()">
                         <div class="form-group m-3">
                           <label for="imgPerfil">Foto de Perfil</label>
                           <input type="file" class="form-control text-center" id="imgPerfil" name="imgPerfil">
@@ -30,12 +30,11 @@
                         <div class="form-group m-3">
                           <label for="acerca">Acerca de mí</label>
                           <textarea rows="5" type="text" class="form-control text-center" id="acerca" name="acerca"></textarea>
-                        </div>  
-                    
-                    
+                        </div>                     
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Guardar</button>
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="clean()">Cancelar</button>
                 </div>
                    
                       </form>
+
