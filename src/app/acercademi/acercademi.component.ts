@@ -9,7 +9,7 @@ import { PersonaService } from '../servicios/persona.service';
   styleUrls: ['./acercademi.component.css']
 })
 export class AcercademiComponent implements OnInit {
-persona: Persona[]= [];
+persona:  Persona[]= [];
 modoEdit: any;
 imagenFondo: String='';
   constructor (

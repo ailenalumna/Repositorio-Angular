@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./editar-acerca-de-mi.component.css']
 })
 export class EditarAcercaDeMiComponent implements OnInit {
-  
+
   acercaForm: FormGroup;
   persona: Persona = new Persona("","","","","","","","","","");
   id: number = 1;
@@ -42,34 +42,22 @@ export class EditarAcercaDeMiComponent implements OnInit {
 
   
   ngOnInit(): void {
-    
-    this.cargarInfo();
-    
-    if (sessionStorage.getItem('currentUser') == "null"){
-      this.modoEdit = false;
-    }else if (sessionStorage.getItem('currentUser') == null){
-      this.modoEdit = false;
-    }else {
-      this.modoEdit = true;
-    }
-    
+  
   }
   onUpdate(): void{
+   
     const id = this.activedRoute.snapshot.params['id']; 
     this.pservice.update(this.persona).subscribe(
       data => {
         alert("la información fue modificada");
-        window.location.reload();
+      //  window.location.reload();
       }, err =>{
         alert("error");
-        window.location.reload();
+      //  window.location.reload();
       }
-    )
-   
-
-  }
+    )}
   
-//metodo para traer la info de la ddbb
+ //metodo para traer la info de la ddbb
 cargarInfo(){
   this.pservice.update(this.persona).subscribe(data => {   
     this.persona = data;
